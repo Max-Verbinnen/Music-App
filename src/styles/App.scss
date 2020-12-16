@@ -1,0 +1,13 @@
+@import './general';
+@import './song';
+@import './player';
+@import './library';
+@import './nav';
+
+.App {
+  transition: all 0.5s ease;
+}
+
+.App.library-active {
+  margin-left: 20rem;
+}
