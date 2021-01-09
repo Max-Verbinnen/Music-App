@@ -41,6 +41,19 @@ function Player({currentSong, setCurrentSong, songs, isPlaying, setIsPlaying}) {
     audioRef.current.volume = volume;
   }, [volume])
 
+  // Listen for events to control audio
+  useEffect(() => {
+    document.addEventListener('keydown', e => {
+      if (e.code === "Space") {
+        handlePlay();
+      } else if (e.code === "ArrowLeft") {
+        handleSkipBack();
+      } else if (e.code === "ArrowRight") {
+        handleSkipForward();
+      }
+    })
+  });
+
 
   // Event handlers
 
